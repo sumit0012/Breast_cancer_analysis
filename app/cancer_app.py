@@ -1,4 +1,3 @@
-from sklearn import datasets
 import gradio as gr
 from skops.io import load
 from sklearn.preprocessing import StandardScaler
