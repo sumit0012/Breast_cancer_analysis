@@ -1,1 +1,7 @@
 seaborn
+pandas
+scikit-learn
+numpy
+matplotlib
+skops
+black
