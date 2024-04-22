@@ -3,7 +3,7 @@ from skops.io import load
 from sklearn.preprocessing import StandardScaler
 
 # Load the pre-trained model
-pipe = load("C:\Breast-Cancer\Model\cancer_pipeline.skops", trusted=True)
+pipe = load("Model/cancer_pipeline.skops", trusted=True)
 
 def predict_cancer(texture_mean,symmetry_mean,texture_se,area_se,smoothness_se,concavity_se,symmetry_se,fractal_dimension_se,smoothness_worst):
     features = [[texture_mean,symmetry_mean,texture_se,area_se,smoothness_se,concavity_se,symmetry_se,fractal_dimension_se,smoothness_worst]]
