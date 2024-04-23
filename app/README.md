@@ -1,8 +1,8 @@
 ---
 title: Breast-Cancer
-emoji: 💊
-colorFrom: yellow
-colorTo: red
+emoji: 📈
+colorFrom: pink
+colorTo: purple
 sdk: gradio
 sdk_version: 4.16.0
 app_file: cancer_app.py
