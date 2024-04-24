@@ -18,10 +18,10 @@ def predict_cancer(texture_mean,symmetry_mean,texture_se,area_se,smoothness_se,c
     # if predicted_cancer == 1 :
 
 inputs = [
-    gr.Slider(1, 40, step=0.1, label="texture_mean"),
+    gr.Slider(0, 40, step=0.1, label="texture_mean"),
     gr.Slider(0, 1, step=0.1, label="symmetry_mean"),
     gr.Slider(0, 4, step=1, label="texture_se"),
-    gr.Slider(10, 190, step=10, label="area_se"),
+    gr.Slider(0, 190, step=10, label="area_se"),
     gr.Slider(0, 1, step=0.01, label="smoothness_se"),
     gr.Slider(0, 1, step=0.1, label="concavity_se"),
     gr.Slider(0, 1, step=1, label="symmetry_se"),
