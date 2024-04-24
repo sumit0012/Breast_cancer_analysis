@@ -1,3 +1,2 @@
 scikit-learn
 skops
-gradio-3.50.2
