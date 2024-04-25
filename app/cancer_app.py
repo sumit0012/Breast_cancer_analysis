@@ -5,7 +5,7 @@ import pandas as pd
 import csv
 
 # Ensure data_cancer.csv exists
-file_path = "Data/data_cancer.csv"
+file_path = "data_cancer.csv"
 with open(file_path, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     # Write header if needed
