@@ -11,6 +11,17 @@ def predict_cancer(texture_mean,symmetry_mean,texture_se,area_se,smoothness_se,c
     # Standardize features using the same scaler used during training
     # scaler = StandardScaler()
     # features_scaled = scaler.fit_transform(features)
+    import csv
+
+# Specify the file path
+file_path = "data_cancer.csv"
+
+# Create an empty CSV file
+with open(file_path, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    # Write header if needed
+    writer.writerow(['diagnosis', 'texture_mean', 'symmetry_mean', 'texture_se', 'area_se', 'smoothness_se', 'concavity_se', 'symmetry_se', 'fractal_dimension_se', 'smoothness_worst'])
+
     predicted_cancer = pipe.predict(features)[0]
 
     label = "Malignant" if predicted_cancer == "M" else "Benign"
