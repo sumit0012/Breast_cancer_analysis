@@ -44,15 +44,15 @@ model = Pipeline(
 
 # Standardize features
 # scaler = StandardScaler()
-# X_train = scaler.fit_transform(X_train)
-# X_test = scaler.transform(X_test)
+# X_train = scaler.fit_transform(X_train.values)
+# X_test = scaler.transform(X_test.values)
 
 # Train logistic regression model
 model = LogisticRegression()
-model.fit(X_train, y_train)
+model.fit(X_train.values, y_train)
 
 # Make predictions
-y_pred = model.predict(X_test)
+y_pred = model.predict(X_test.values)
 
 # Evaluate model performance
 accuracy = accuracy_score(y_test, y_pred)
