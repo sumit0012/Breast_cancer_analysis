@@ -24,7 +24,7 @@ X=df.drop(["diagnosis"],axis=1)
 Y=df["diagnosis"]
 
 # Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
+X_train.values, X_test.values, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
 
 num_col = [0,1,2,3,4,5,6,7,8,9]
 
