@@ -17,15 +17,12 @@ def predict_cancer(texture_mean,symmetry_mean,texture_se,area_se,smoothness_se,c
     label = "Malignant" if predicted_cancer == "M" else "Benign"
     # print(predicted_cancer)
     features[0] = [predicted_cancer] + features[0]
-
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, 'Data', 'data_cancer.csv')
     
-    temp_df = pd.read_csv(file_path)
+    temp_df = pd.read_csv('Data/data_cancer.csv')
     new_df = pd.DataFrame(features, columns=['diagnosis', 'texture_mean', 'symmetry_mean', 'texture_se', 'area_se', 'smoothness_se', 'concavity_se', 'symmetry_se', 'fractal_dimension_se', 'smoothness_worst'])
     temp_df = pd.concat([temp_df, new_df], ignore_index=True)
     temp_df = temp_df.drop_duplicates()
-    temp_df.to_csv(file_path, header=True, index=False)
+    temp_df.to_csv('Data/data_cancer.csv', header=True, index=False)
 
     return label
     # if predicted_cancer == 1 :
