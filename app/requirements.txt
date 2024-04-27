@@ -1,4 +1,2 @@
-python -m venv breast-cancer
-source venv/bin/activate
 scikit-learn
 skops
