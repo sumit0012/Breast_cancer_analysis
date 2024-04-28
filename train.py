@@ -18,7 +18,7 @@ from sklearn.compose import ColumnTransformer
 
 
 # Load the breast cancer dataset
-df = pd.read_csv(r'Data/data_cancer.csv')
+df = pd.read_csv(r'data_cancer.csv')
 
 X=df.drop(["diagnosis"],axis=1)
 Y=df["diagnosis"]
