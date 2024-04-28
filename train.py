@@ -1,7 +1,8 @@
 import warnings
+
 warnings.filterwarnings("ignore")
-import numpy as np 
-import pandas as pd 
+import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
@@ -16,29 +17,25 @@ from sklearn.preprocessing import OrdinalEncoder, StandardScaler
 from sklearn.compose import ColumnTransformer
 
 
-
 # Load the breast cancer dataset
-df = pd.read_csv(r'data_cancer.csv')
+df = pd.read_csv(r"data_cancer.csv")
 
-X=df.drop(["diagnosis"],axis=1)
-Y=df["diagnosis"]
+X = df.drop(["diagnosis"], axis=1)
+Y = df["diagnosis"]
 
 # Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
-
-num_col = [0,1,2,3,4,5,6,7,8,9]
-
-transform = ColumnTransformer(
-    [
-        
-        ("num_scaler", StandardScaler(), num_col)
-    ]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, Y, test_size=0.3, random_state=42
 )
+
+num_col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+transform = ColumnTransformer([("num_scaler", StandardScaler(), num_col)])
 
 model = Pipeline(
     steps=[
         ("preprocessing", transform),
-        ("model",LogisticRegression()),
+        ("model", LogisticRegression()),
     ]
 )
 
